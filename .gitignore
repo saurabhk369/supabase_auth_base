@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+.env
+.env.local
+.env.test
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+coverage/
+
+# VSCode
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Testing
+__tests__/
+jest.config.js
+test-results/
+
+# Supabase Auth Redirect HTML (optional)
+public/supabase-redirect.html

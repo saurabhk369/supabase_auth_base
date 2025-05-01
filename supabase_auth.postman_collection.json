@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Supabase Auth API",
+    "_postman_id": "abcd1234-abcd-1234-abcd-1234abcd5678",
+    "description": "Test Supabase-based Node.js Auth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Email Signup",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"Test@123\",\n    \"full_name\": \"Test User\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/email-signup",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["auth", "email-signup"]
+        }
+      }
+    },
+    {
+      "name": "Email Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"Test@123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/email-login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["auth", "email-login"]
+        }
+      }
+    },
+    {
+      "name": "Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "sb-access-token=YOUR_TOKEN_HERE"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/auth/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["auth", "profile"]
+        }
+      }
+    },
+    {
+      "name": "Google Login (Redirect)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/auth/google-login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["auth", "google-login"]
+        }
+      }
+    }
+  ]
+}
