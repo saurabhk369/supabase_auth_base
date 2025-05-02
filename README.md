@@ -62,7 +62,7 @@ A boilerplate backend using Node.js and Supabase for email/password and Google O
 ├── middleware/
 ├── routes/
 ├── supabaseClient.js
-├── server.js
+├── index.js
 ├── .env
 └── public/
 ```
