@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const verifyToken = async (req, res, next) => {
     const bearerToken = req.headers.authorization?.split('Bearer ')[1];
-    const sbToken = req.cookies['sb-access-bearerToken'];
+    const sbToken = req.cookies['sb-access-token'];
     const appJwt = req.cookies['auth_token'];
 
     try {

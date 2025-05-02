@@ -24,7 +24,7 @@ exports.login = async (req, res) => {
     const { email, password, remember_me } = req.body;
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-    if (error || data?.user) return res.status(401).json({ error: error.message });
+    if (error || !data?.user) return res.status(401).json({ error: error.message });
 
     const payload = {
         id: data.user.id,
@@ -36,7 +36,7 @@ exports.login = async (req, res) => {
 
     const token = jwt.sign(payload, process.env.SUPABASE_JWT_SECRET, { expiresIn: expiry });
 
-    res.cookiw('auth_token', token, {
+    res.cookie('auth_token', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',
